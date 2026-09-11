@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 | js practice</title>
+</head>
+<body>
+    <h1 id="heading">Welcome</h1>
+
+    <!--- image tag with js -->
+    <img src="../personal images/fimage1.jpg" alt="Sample image" width="200px" height="200px" id="myImage">
+    <br>
+    <br>
+    <a href="#" id="myLink">Visit Link</a>
+    <br>
+    <br>
+
+    <!--- handlink user events -->
+    <!-- Click Event -->
+    <button id="btn">Click Me</button>
+    <p id="message"></p>
+    <br>
+    <br>
+    <!-- Key press Events -->
+    <input type="text" id="nameInput" placeholder="Type your name">
+    <p id="output"></p>
+    <br>
+
+    <!-- Basic Form Validation -->
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        const title = document.getElementById("heading");
+        console.log(title.textContent);
+        //Change Text
+        document.getElementById("heading").textContent = "Hello, JavaScript!";
+        //Change Style
+        const heading = document.getElementById("heading");
+        heading.style.color = "blue";
+        heading.style.fontSize = "30px";
+
+        //// 3. Change Attributes
+        // ID selector ka use karke precise selection
+        document.getElementById("myImage").src = "../personal images/fimage1.jpg"; 
+        document.getElementById("myLink").href = "https://google.com";
+        document.getElementById("myLink").textContent = "Go to Google"; // Link text updated
+       
+        //Change Attributes using query selector
+        // document.querySelector("img").src = "../personal images/fimage2.jpg ";
+        // document.querySelector("a").href = "https://google.com";
+
+        // Click Event
+        const btn = document.getElementById("btn");
+        const msg = document.getElementById("message");
+
+        btn.addEventListener("click", () => {
+            msg.textContent = "Button was clicked!";
+            msg.style.color = "green";
+        });
+
+        // mouseover event
+        btn.addEventListener("mouseover", () => {
+            btn.style.backgroundColor = "skyblue";
+        });
+        btn.addEventListener("mouseout", () => {
+            btn.style.backgroundColor = "green";
+        });
+
+        // Key press event
+        const input = document.getElementById("nameInput");
+        const output = document.getElementById("output");
+
+        input.addEventListener("keypress", () => {
+            output.textContent = input.value;
+        });
+
+        // Basic Form Validation
+        const form = document.getElementById("loginForm");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // stop page reload
+
+            const user = document.getElementById("username").value.trim();
+            const pass = document.getElementById("password").value.trim();
+
+            if (user === "" || pass === "") {
+                alert("Please fill in all fields!");
+            } else {
+                alert(`Welcome, ${user}!`);
+            }
+        }
+        );
+
+        // Introduction to Console Debugging - Common Commands
+        console.log("Debug message");
+        console.warn("This is a warning");
+        console.error("Something went wrong!");
+    </script>
+</body>
+</html>
