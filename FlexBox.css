@@ -1,0 +1,33 @@
+/* this is file for using flex  box properties */
+
+/* main div */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 40px;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.box{
+    background-color: #db9b9b;
+    border: 5px solid #24323f;
+    padding: 40px;
+    text-align: center;font-weight: bold;
+    border-radius: 8px;
+}
+
+/* using media query */
+@media (min-width: 768px){
+    .row{
+        flex-direction: row;
+    }
+    .box{
+        flex: 1;
+    }
+}
