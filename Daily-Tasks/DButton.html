@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interactive Buttons Task</title>
+    <link rel="stylesheet" href="DButton.css">
+</head>
+<body>
+    <!-- Output Text Display Box -->
+    <div id="textDisplayContainer" class="box">
+        <h3>Sample Text Output</h3>
+        <p id="sampleText">Yeh sample text hai. Upar ke controls se iska color, size, font aur style change hoga!</p>
+    </div>
+    <div id="txt" >
+        <h2>Interactive Text Styling Controls</h2>
+    </div>
+    <!-- Text Color Buttons -->
+    <div id="colorContainer" class="box">
+        <h3>1. Text Color Change (OnClick)</h3>
+        <button onclick="changeTextColor('red')">RED</button>
+        <button onclick="changeTextColor('green')">GREEN</button>
+        <button onclick="changeTextColor('blue')">BLUE</button>
+    </div>
+    <!-- Font Family Dropdown -->
+    <div id="fontContainer" class="box">
+        <h3>2. Font Family (Dropdown)</h3>
+        <select id="fontSelector" onchange="changeFontFamily(this.value)">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+    </div>
+    <!-- Font Size Buttons -->
+    <div id="sizeContainer" class="box">
+        <h3>3. Font Size (Click A+ / A-)</h3>
+        <button onclick="changeFontSize(2)">A+</button>
+        <button onclick="changeFontSize(-2)">A-</button>
+    </div>
+    <!-- Font Style Mouseover -->
+    <div id="styleContainer" class="box">
+        <h3>4. Font Style (Mouseover)</h3>
+        <span class="hover-btn" onmouseover="applyStyle('bold')">Bold</span>
+        <span class="hover-btn" onmouseover="applyStyle('italic')">Italic</span>
+        <span class="hover-btn" onmouseover="applyStyle('underline')">Underline</span>
+        <span class="hover-btn" onmouseover="applyStyle('normal')">Reset Style</span>
+    </div>
+    <!-- Js file link -->
+        <script src="DButton.js"></script>
+</body>
+</html>
