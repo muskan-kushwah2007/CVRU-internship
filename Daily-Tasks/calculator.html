@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js" defer></script>
+</head>
+<body>
+    <div class="calculator-card">
+        <div class="text">
+            <h1>Simple Calculator using - HTML, CSS, JS</h1>
+        </div>
+        <!-- first input box -->
+        <div class="input-group">
+            <!-- <label>Number 1</label> -->
+            <input type="number" id="num1">
+        </div>
+        <!-- second input box -->
+        <div class="input-group">
+            <!-- <label>Number 2</label> -->
+            <input type="number" id="num2">
+        </div>
+        <!-- Operatins -->
+        <div class="button-group">
+            <button onclick="clearFields()">❎</button>
+            <button onclick="calculate('add')">+</button>
+            <button onclick="calculate('sub')">-</button>
+            <button onclick="calculate('mul')">*</button>
+            <button onclick="calculate('div')">/</button>
+            <button onclick="calculate('mod')">%</button>
+            <button onclick="calculateLast()">=</button>
+        </div>
+        <!-- Result  -->
+         <div class="result-box">
+            <h3>Result : <span id="output">0</span></h3>
+         </div>
+    </div>
+</body>
+</html>
