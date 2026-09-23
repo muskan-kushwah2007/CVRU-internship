@@ -1,0 +1,25 @@
+// ✔ Task 2: Build a Form That Displays Input Data Dynamically
+import { useState } from "react";
+
+function UserForm(){
+    const [name, setName] = useState("");
+    const [ email, setEmail] = useState("");
+
+    return(
+        <div>
+            <h2>Registration Form</h2>
+            <input type="text" placeholder="Enter Name"
+            onChange={(e) => setName(e.target.value)}/>
+            <br></br>
+            <br></br>
+            <input type="email" placeholder="Enter email"
+            onChange={(e) => setEmail(e.target.value)}/>
+
+            <h3>Live Preview</h3>
+            <p>Name :{name}</p>
+            <p>Email :{email}</p>
+        </div>
+    );
+}
+
+export default UserForm;
