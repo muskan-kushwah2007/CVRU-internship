@@ -6,6 +6,7 @@ import GreetingProps from './PracticeComponents/GreetingProps.js';
 import ProfileCard from './PracticeComponents/ProfileCard.js';
 import CounterApp from './PracticeComponents/CounterApp.js';
 import UserForm from './PracticeComponents/UserForm.js';
+import UserList from './PracticeComponents/UserList.js';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           {/* Day 3 Task Componets */}
           <CounterApp/>
           <UserForm/>
+          <UserList/>
         </div>
       </main>
       <Footer />
