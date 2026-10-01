@@ -7,6 +7,7 @@ import ProfileCard from './PracticeComponents/ProfileCard.js';
 import CounterApp from './PracticeComponents/CounterApp.js';
 import UserForm from './PracticeComponents/UserForm.js';
 import UserList from './PracticeComponents/UserList.js';
+import Posts from './PracticeComponents/Posts.js';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <CounterApp/>
           <UserForm/>
           <UserList/>
+          <Posts/>
         </div>
       </main>
       <Footer />
