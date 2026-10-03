@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import './App.css';
 import Greeting from './Practice Components/Greeting';
 import ProfileCard from './Practice Components/ProfileCard';
+import CounterApp from './Practice Components/CounterApp';
+import UserForm from './Practice Components/UserForm';
 
 function App() {
   return (
@@ -35,6 +37,13 @@ function App() {
           />
 
       </div>
+
+      {/* Day 3 Task 1: Create a Simple Counter App (Increment/Decrement) */}
+      <CounterApp />
+
+      {/* Day 3 Task 2: Build a Form That Displays Input Data Dynamically */}
+      <UserForm />
+
       <Footer />
     </div>
   );
