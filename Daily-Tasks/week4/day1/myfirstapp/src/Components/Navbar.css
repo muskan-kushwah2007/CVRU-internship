@@ -1,0 +1,21 @@
+.nav {
+    padding: 20px;
+    background-color: #333;
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+
+.nav-link {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-link.active {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+    border-bottom: 2px solid blue;
+}
