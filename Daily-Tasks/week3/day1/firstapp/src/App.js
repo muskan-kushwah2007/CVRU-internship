@@ -9,6 +9,8 @@ import CounterApp from './Practice Components/CounterApp';
 import UserForm from './Practice Components/UserForm';
 import UserList from './Practice Components/UserList';
 import Posts from './Practice Components/Posts';
+import LoginForm from './Practice Components/LoginForm';
+import LoginMessage from './Practice Components/LoginMessage';
 
 function App() {
 
@@ -61,7 +63,10 @@ function App() {
         Day 4 Task 2: Display Posts Dynamically on Render
       </button>
       { showUserPosts && <Posts /> }
-
+      {/* Day 5 Task 1: Create a Simple Login Form UI */}
+      <LoginForm/>
+      {/* Day 5 Task 2: Display Welcome Message Conditionally */}
+      <LoginMessage/>
       <Footer />
     </div>
   );
