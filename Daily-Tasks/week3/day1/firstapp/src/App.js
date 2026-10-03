@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,8 +7,13 @@ import Greeting from './Practice Components/Greeting';
 import ProfileCard from './Practice Components/ProfileCard';
 import CounterApp from './Practice Components/CounterApp';
 import UserForm from './Practice Components/UserForm';
+import UserList from './Practice Components/UserList';
+import Posts from './Practice Components/Posts';
 
 function App() {
+
+  const [showUserList, setShowUserList] = useState(false);
+  const [showUserPosts, setShowUserPosts] = useState(false);
   return (
     <div>
       {/* Day 2 Tasks */}
@@ -43,6 +48,19 @@ function App() {
 
       {/* Day 3 Task 2: Build a Form That Displays Input Data Dynamically */}
       <UserForm />
+
+      {/* Day 4 Task 1: Fetch Public API Data Using useEffect */}
+      <button onClick={() => setShowUserList(!showUserList)}>
+      Day 4 Task 1: Fetch Public API Data Using useEffect
+      </button>
+      { showUserList && <UserList />}
+      <br />
+      <br />
+      {/* Day 4 Task 2: Display Posts Dynamically on Render */}
+      <button onClick={() => setShowUserPosts(!showUserPosts)}>
+        Day 4 Task 2: Display Posts Dynamically on Render
+      </button>
+      { showUserPosts && <Posts /> }
 
       <Footer />
     </div>
