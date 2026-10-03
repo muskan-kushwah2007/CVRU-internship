@@ -8,6 +8,8 @@ import CounterApp from './PracticeComponents/CounterApp.js';
 import UserForm from './PracticeComponents/UserForm.js';
 import UserList from './PracticeComponents/UserList.js';
 import Posts from './PracticeComponents/Posts.js';
+import LogiunForm from './PracticeComponents/LoginForm.js';
+import LoginFormTask from './PracticeComponents/LoginFormTask.js';
 
 function App() {
   return (
@@ -33,8 +35,12 @@ function App() {
           {/* Day 3 Task Componets */}
           <CounterApp/>
           <UserForm/>
+          {/* Day 4 Task Components */}
           <UserList/>
           <Posts/>
+          {/* Day 5 Task Components */}
+          <LogiunForm/>
+          <LoginFormTask/>
         </div>
       </main>
       <Footer />
