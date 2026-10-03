@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #222;
+    color: white;
+
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero */
+
+.hero {
+    background-color: white;
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Blog Section */
+
+.blog-section {
+    padding: 50px;
+}
+
+.blog-section h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Search */
+
+.search-box {
+    display: block;
+
+    width: 350px;
+    max-width: 100%;
+
+    padding: 12px;
+
+    margin: 0 auto 30px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+/* Blog Container */
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+/* Blog Card */
+
+.blog-card {
+    background-color: white;
+
+    width: 300px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card h2 {
+    margin-bottom: 10px;
+}
+
+.blog-info {
+    color: #777;
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.blog-card p {
+    line-height: 1.5;
+}
+
+/* Read More Button */
+
+.read-btn {
+    margin-top: 15px;
+
+    padding: 10px 15px;
+
+    background-color: #222;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.read-btn:hover {
+    background-color: #444;
+}
+
+/* Details */
+
+.details {
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+}
+
+/* No Results */
+
+.no-results {
+    text-align: center;
+    color: #777;
+}
+
+/* About */
+
+.about {
+    background-color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #666;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 30px;
+}
