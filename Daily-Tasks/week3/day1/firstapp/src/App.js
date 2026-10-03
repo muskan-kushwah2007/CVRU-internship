@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 import Greeting from './Practice Components/Greeting';
+import ProfileCard from './Practice Components/ProfileCard';
 
 function App() {
   return (
@@ -18,6 +19,21 @@ function App() {
       <div>
         <Greeting name="Priya" topic="React Components!" />
         <Greeting name="Rohan" topic="React Props!" />
+      </div>
+
+      {/* Day 2 Task 3: Build a Small Profile Card Component */}
+      <div style={{ display: "flex", justifyContent: "center"}}>
+        <ProfileCard
+          name="Priya"
+          role="Frontend Devoloper"
+          image="https://randomuser.me/api/portraits/women/44.jpg"
+          />
+          <ProfileCard
+          name="Himanshu Awasthi"
+          role="Backend Devoloper"
+          image="https://randomuser.me/api/portraits/men/32.jpg"
+          />
+
       </div>
       <Footer />
     </div>
