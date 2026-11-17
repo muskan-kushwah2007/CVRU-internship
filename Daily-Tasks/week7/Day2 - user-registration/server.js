@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 4000;
 
 const startServer = async () => {
   try {
-
     await mongoose.connect(process.env.MONGO_URI);
 
     console.log("MongoDB Connected Successfully");
@@ -26,10 +25,8 @@ const startServer = async () => {
     });
 
   } catch (error) {
-
     console.error("Database Connection Failed:", error.message);
     process.exit(1);
-
   }
 };
 

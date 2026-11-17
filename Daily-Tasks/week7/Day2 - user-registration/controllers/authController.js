@@ -1,11 +1,14 @@
 
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
+// ==================================
+// USER REGISTRATION
+// ==================================
 
 exports.registerUser = async (req, res) => {
-
   try {
-
     // 1. Get user data
     const { name, email, password } = req.body;
 
@@ -23,7 +26,7 @@ exports.registerUser = async (req, res) => {
       });
     }
 
-    // 4. Validate email format
+    // 4. Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email.trim())) {
@@ -32,7 +35,7 @@ exports.registerUser = async (req, res) => {
       });
     }
 
-    // 5. Validate password length
+    // 5. Validate password
     if (password.length < 8) {
       return res.status(400).json({
         message: "Password must be at least 8 characters"
@@ -60,10 +63,9 @@ exports.registerUser = async (req, res) => {
       password: hashedPassword
     });
 
-    // 9. Send successful response
+    // 9. Success response
     return res.status(201).json({
       message: "User registered successfully",
-
       user: {
         id: newUser._id,
         name: newUser.name,
@@ -73,10 +75,8 @@ exports.registerUser = async (req, res) => {
     });
 
   } catch (error) {
-
     console.error(error);
 
-    // Handle duplicate email race condition
     if (error.code === 11000) {
       return res.status(400).json({
         message: "Email already registered"
@@ -85,6 +85,84 @@ exports.registerUser = async (req, res) => {
 
     return res.status(500).json({
       message: "Server error"
+    });
+  }
+};
+
+
+// ==================================
+// USER LOGIN
+// ==================================
+
+exports.login = async (req, res) => {
+  try {
+    // 1. Get login data
+    const { email, password } = req.body;
+
+    // 2. Check empty fields
+    if (!email || !password) {
+      return res.status(400).json({
+        error: "Email and password are required"
+      });
+    }
+
+    // 3. Find user
+    const user = await User.findOne({
+      email: email.trim().toLowerCase()
+    });
+
+    if (!user) {
+      return res.status(401).json({
+        error: "Invalid email or password"
+      });
+    }
+
+    // 4. Compare password
+    const isMatch = await bcrypt.compare(
+      password,
+      user.password
+    );
+
+    if (!isMatch) {
+      return res.status(401).json({
+        error: "Invalid email or password"
+      });
+    }
+
+    // 5. Check JWT Secret
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET is missing");
+    }
+
+    // 6. Generate JWT Token
+    const token = jwt.sign(
+      {
+        id: user._id,
+        role: user.role
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d"
+      }
+    );
+
+    // 7. Send success response
+    return res.status(200).json({
+      message: "Login successful",
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role
+      }
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      error: "Server error"
     });
   }
 };
