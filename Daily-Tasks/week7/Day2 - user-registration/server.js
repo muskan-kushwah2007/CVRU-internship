@@ -10,6 +10,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api", require("./routes/authRoutes"));
+app.use("/api", require("./routes/userRoutes"));
 
 // Start server after database connection
 const PORT = process.env.PORT || 4000;
